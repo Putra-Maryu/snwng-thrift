@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Fashion Thrift</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="png/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="png/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- SEO Optimization -->
+    <meta name="description" content="Toko Fashion Thrift menyediakan pakaian bekas berkualitas dengan harga terjangkau. Tampil gaya, hemat, dan ramah lingkungan dengan produk pilihan kami.">
+    <meta name="keywords" content="fashion thrift, pakaian bekas, fashion ramah lingkungan, thrift store, pakaian murah">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Dark Mode */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background-color: #f2f2f2; /* Latar belakang cerah */
+            color: #121212; /* Teks hitam */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+        }
+
+        .light-mode .navbar {
+            background-color: #ffffff; /* Navbar putih */
+        }
+
+        .light-mode .nav-links a {
+            color: #121212; /* Teks hitam pada link */
+        }
+
+        .light-mode .footer-content {
+            background-color: #f2f2f2; /* Footer cerah */
+            color: #121212; /* Teks hitam pada footer */
+        }
+
+        .light-mode .darkmode-toggle {
+            background-color: #121212; /* Tombol Dark mode berwarna gelap */
+            color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #B1D12E; /* Hijau */
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #B1D12E; /* Hijau */
+            transform: scale(1.1);
+        }
+
+        /* Hamburger menu */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+        /* About Section */
+        #about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+            margin-top: 30px;
+        }
+
+        #about .logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin-right: 40px;
+        }
+
+        #about .logo img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        #about .description {
+            flex: 2;
+            text-align: left;
+        }
+
+        #about h1 {
+            font-size: 36px;
+            color: #B1D12E; /* Hijau */
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Product Gallery */
+        #gallery {
+            padding: 60px 20px;
+            background-color: #121212;
+            text-align: center;
+            overflow-x: auto; /* Menambahkan scroll horizontal */
+        }
+        
+        #gallery h1 {
+            font-size: 36px;
+            color: #B1D12E; /* Hijau */
+            margin-bottom: 30px;
+        }
+        
+        .product-gallery {
+            display: flex; /* Menggunakan flexbox untuk menampilkan produk secara horizontal */
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap; /* Produk akan tetap dalam satu baris */
+        }
+        
+        .product-item {
+            flex-shrink: 0; /* Mencegah gambar mengecil */
+            width: 250px; /* Lebar tetap untuk setiap produk */
+        }
+        
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .product-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Belanja Sesuai Budget Section */
+        #budget-shop {
+            padding: 60px 20px;
+            background-color: #121212;
+            text-align: center;
+        }
+
+        #budget-shop h1 {
+            font-size: 36px;
+            color: #B1D12E; /* Hijau */
+            margin-bottom: 30px;
+        }
+
+        #tag-h2-100 {
+            background-color: #B1D12E; /* Hijau */
+            color: #121212;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #tag-h2-100:hover {
+            background-color: #8bba25;
+            transform: scale(1.05);
+        }
+
+        #tag-h2-100 p {
+            margin: 0;
+            font-size: 10px;
+            font-weight: bold;
+            color: #121212;
+        }
+
+        #tag-h2-100 h1 {
+            margin: 5px 0 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: #121212;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            width: 30%;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            color: #B1D12E; /* Hijau */
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+        }
+
+        .footer-links a {
+            color: #B1D12E;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #8bba25;
+        }
+
+        /* Dark Mode Button */
+        .darkmode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #B1D12E; /* Hijau */
+            color: #ffffff;
+            border: none;
+            padding: 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .darkmode-toggle:hover {
+            background-color: #8bba25;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+            #about {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            
+            #budget-shop {
+                padding: 30px 10px;
+                gap: 15px; /* Mengurangi jarak antar tombol */
+            }
+
+            #tag-h2-100 {
+                width: 45%; /* Membuat tombol lebih kecil agar muat di layar kecil */
+                font-size: 14px; /* Ukuran font lebih kecil */
+            }
+
+            #gallery {
+                padding: 40px 10px;
+            }
+        
+            .product-gallery {
+                flex-wrap: nowrap; /* Produk tetap dalam satu baris */
+            }
+        
+            .product-item {
+                width: 200px; /* Ukuran produk lebih kecil di layar kecil */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 15px; /* Distance between links */
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 50%;
+                background-color: #1a1a1a;
+                z-index: 10;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                text-align: left;
+                color: #ffffff;
+                font-size: 22px;
+            }
+
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="navbar-brand" aria-label="Nama Toko">SNWNG THRIFT</div>
+                <div class="hamburger-menu" id="hamburger-menu" aria-label="Menu">
+                    <span class="hamburger-icon">&#9776;</span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#gallery">Brand</a></li>
+                    <li><a href="#budget-shop">Budget</a></li>
+                    <li><a href="linktree.html">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="logo">
+            <img src="snwng.png" alt="Logo Toko" aria-label="Logo Toko Fashion Thrift">
+        </div>
+        <div class="description">
+            <h1>SNWNG THRIFT</h1>
+            <p>Toko Fashion Thrift adalah tempat terbaik untuk menemukan pakaian bekas berkualitas dengan harga yang sangat terjangkau. Belanja produk fashion yang ramah lingkungan, trendi, dan nyaman.</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1>Galeri Produk</h1>
+        <div class="product-gallery">
+            <div class="product-item">
+                <img src="adidas.jpg" alt="adidas" />
+            </div>
+            <div class="product-item">
+                <img src="dc.jpg" alt="dickies" />
+            </div>
+            <div class="product-item">
+                <img src="fila.jpg" alt="fila" />
+            </div>
+            <div class="product-item">
+                <img src="levis.jpg" alt="levis" />
+            </div>
+            <div class="product-item">
+                <img src="nike.jpg" alt="nike" />
+            </div>
+            <div class="product-item">
+                <img src="tnf.jpg" alt="tnf" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Belanja Sesuai Budget Section -->
+    <section id="budget-shop">
+        <h1>Belanja Sesuai Budget</h1>
+        <button id="tag-h2-100">
+            <p>Dibawah</p>
+            <h1><strong>100 Rb</strong></h1>
+        </button>
+        <button id="tag-h2-100">
+            <p>Dibawah</p>
+            <h1><strong>250 Rb</strong></h1>
+        </button>  
+        <button id="tag-h2-100">
+            <p>Dibawah</p>
+            <h1><strong>500 Rb</strong></h1>
+        </button>  
+        <button id="tag-h2-100">
+            <p>Dibawah</p>
+            <h1><strong>1 Jt</strong></h1>
+        </button>  
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Informasi</h3>
+                <p>Toko Fashion Thrift.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Web By:</h3>
+                <p>TRAA FACTORY</p>
+                <p>Order Web?<a href="https://6283804272709"> Hub Kami</a></p>
+                <p></p>
+            </div>
+            <div class="footer-section">
+                <h3>Ikuti Kami</h3>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/snwng_thrifft/">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p><a href="https://policies.google.com/privacy?hl=id" target="_blank">Kebijakan Privasi</a></p>
+            <p><a href="https://policies.google.com/terms?hl=id" target="_blank">Syarat & Ketentuan</a></p>
+        </div>
+    </footer>
+
+    <button class="darkmode-toggle" id="darkmode-toggle" aria-label="Toggle Dark Mode">&#x1F319;</button>
+
+    <script>
+        // Toggle Dark/Light Mode
+        const darkmodeToggle = document.getElementById('darkmode-toggle');
+        const body = document.body;
+        const navbar = document.querySelector('.navbar');
+        const footer = document.querySelector('footer');
+
+        darkmodeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            navbar.classList.toggle('light-mode');
+            footer.classList.toggle('light-mode');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        // Initialize dark or light mode based on saved preference
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            navbar.classList.add('light-mode');
+            footer.classList.add('light-mode');
+        }
+
+        // Hamburger Menu
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

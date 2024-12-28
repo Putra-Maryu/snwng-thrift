@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree - Traa X Liko's</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="png/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="png/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Linktree Button Styles */
+.linktree {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.link-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.link-btn:active {
+    transform: scale(1);
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer p a:hover {
+    color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .link-btn {
+        font-size: 16px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+            <!-- <img src="https://example.com/logo.png" alt="Traa X Liko's Logo" class="logo"> -->
+            <h1>SNWNG THRIFT</h1>
+            <p>Sosial Media Kami</p>
+    </header>
+
+    <div class="linktree">
+            <a href="https://www.instagram.com/snwng_thrifft/" class="link-btn" target="_blank">Instagram Snwng thrift</a>
+            <a href="https://wa.me/6289519479200" class="link-btn" target="_blank">Whatsapp Snwng thrift</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Traa Factory. Semua Hak Cipta Dilindungi.</p>
+        <p><a href="https://policies.google.com/privacy?hl=id" target="_blank">Kebijakan Privasi</a> | <a href="https://policies.google.com/terms?hl=id" target="_blank">Syarat & Ketentuan</a></p>
+    </footer>
+</div>
+
+    <script>
+        document.querySelectorAll('.link-btn').forEach(button => {
+        button.addEventListener('mouseover', () => {
+                button.style.cursor = 'pointer';
+            });
+        });
+
+    </script>
+</body>
+</html>
